@@ -24,7 +24,7 @@ void Publisher::detach(TrafficSignal *obs)
 
 void Publisher::notify()
 {
-    for(int i = 0; i<listeners.size(); ++i)
+    for(unsigned int i = 0; i<(unsigned int)listeners.size(); ++i)
     {
         listeners[i]->update();
     }
