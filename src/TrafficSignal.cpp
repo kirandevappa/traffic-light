@@ -13,7 +13,7 @@ void TrafficSignal::update(uint value, bool publishOnScreen)
 {
     //do nothing for now
     std::string color = "";
-    if(identifier%2 == 0)
+    if(identifier%2 != 0)
     { 
         switch(value) {
             case StateGR:
