@@ -13,6 +13,6 @@ public:
     ~Publisher();
     void attach(TrafficSignal *obs);
     void detach(TrafficSignal *obs);
-    void notify();
+    void notify(uint value, bool publishOnScreen);
 
 };

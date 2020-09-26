@@ -22,11 +22,12 @@ void Publisher::detach(TrafficSignal *obs)
     listeners.erase(std::remove(listeners.begin(), listeners.end(), obs), listeners.end());
 }
 
-void Publisher::notify()
+void Publisher::notify(uint value, bool publishOnScreen)
 {
     for(unsigned int i = 0; i<(unsigned int)listeners.size(); ++i)
     {
-        listeners[i]->update();
+        listeners[i]->update( value, publishOnScreen);
     }
+    std::cout<<std::endl;
 }
 

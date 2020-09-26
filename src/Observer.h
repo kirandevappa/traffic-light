@@ -2,5 +2,5 @@
 
 class Observer {
 public:
-    virtual void update() = 0;
+    virtual void update(uint value, bool publishOnScreen) = 0;
 };
