@@ -3,30 +3,9 @@
 #include<thread>
 
 SignalController::SignalController(){
-
 }
 
 SignalController::~SignalController(){
-
-
-}
-
-std::string SignalController::stateToString(TrafficLight tempLight)
-{
-	std::string returnStr;
-	if(tempLight.currentState == stateWaitingGreen || tempLight.currentState == stateRed)
-	{
-		returnStr = "RED"; 
-	}
-	else if(tempLight.currentState == stateAmber)
-	{
-		returnStr = "AMBER";
-	}
-	else
-	{
-		returnStr = "GREEN";
-	}
-	return returnStr;
 }
 
 void SignalController::startComputing(uint totalPer, uint amberPer, uint commonRedPer)
@@ -38,9 +17,7 @@ void SignalController::startComputing(uint totalPer, uint amberPer, uint commonR
     uint counter = 0;
 
     //Some calculations for states
-    std::cout<<"Here1"<<std::endl;
     uint greenRedPeriod = (totalPeriod - (2*amberPeriod) - (2*commonRedPeriod))/2;
-    std::cout<<"greenRedPeriod = "<<greenRedPeriod<<std::endl;
 
     bool firstUse = true;
 

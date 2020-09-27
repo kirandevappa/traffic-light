@@ -14,5 +14,4 @@ public:
     void attach(TrafficSignal *obs);
     void detach(TrafficSignal *obs);
     void notify(uint value, bool publishOnScreen);
-
 };
