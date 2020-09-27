@@ -3,6 +3,11 @@
 #include<algorithm>
 #include "TrafficSignal.h"
 
+/**
+ * @brief Publisher base class. A class responsible to publish and notify to listeners
+ * 
+ */
+
 class Publisher{
 private:
     std::vector<class TrafficSignal *> listeners;

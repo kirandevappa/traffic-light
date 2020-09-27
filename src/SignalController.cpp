@@ -2,12 +2,27 @@
 #include<chrono>
 #include<thread>
 
+/**
+ * @brief Construct a new Signal Controller:: Signal Controller object
+ * 
+ */
 SignalController::SignalController(){
 }
 
+/**
+ * @brief Destroy the Signal Controller:: Signal Controller object
+ * 
+ */
 SignalController::~SignalController(){
 }
 
+/**
+ * @brief Core logic of computing the traffic timing and sequence
+ * 
+ * @param totalPer 
+ * @param amberPer 
+ * @param commonRedPer 
+ */
 void SignalController::startComputing(uint totalPer, uint amberPer, uint commonRedPer)
 {
     const auto timeWindow = std::chrono::milliseconds(1000);
@@ -16,9 +31,8 @@ void SignalController::startComputing(uint totalPer, uint amberPer, uint commonR
 	uint commonRedPeriod = commonRedPer;
     uint counter = 0;
 
-    //Some calculations for states
+    // calculations for states
     uint greenRedPeriod = (totalPeriod - (2*amberPeriod) - (2*commonRedPeriod))/2;
-
     bool firstUse = true;
 
     while(true)
@@ -54,6 +68,10 @@ void SignalController::startComputing(uint totalPer, uint amberPer, uint commonR
 
 }
 
+/**
+ * @brief State machine that Core logic relies on to move to appropriate state
+ * 
+ */
 void SignalController::movingStateMachine()
 {
     switch(currentState) {

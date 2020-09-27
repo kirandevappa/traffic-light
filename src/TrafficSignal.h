@@ -1,5 +1,6 @@
 #include "Observer.h"
 
+//state machine. Can move it to util 
 enum AdvStat{
     StateGR = 1,
     StateAR,
@@ -9,10 +10,14 @@ enum AdvStat{
     NN
 };
 
-
+/**
+ * @brief Derived class of Observer. Listens to signals from publisher
+ * and prints the color to the screen.
+ * 
+ */
 class TrafficSignal : public Observer {
 public:
-   // SignalController *signalController;
+
     uint identifier;
     TrafficSignal(uint signalIdentifier);
     ~TrafficSignal();

@@ -1,7 +1,10 @@
 #include "Publisher.h"
 //#include "util.h"
 
-
+/**
+ * @brief 
+ * 
+ */
 enum AdvancedStates{
     StateGreenRed = 1,
     StateAmberRed,
@@ -11,6 +14,11 @@ enum AdvancedStates{
     none
 };
 
+/**
+ * @brief Class Signal controller, extends Base Publisher. 
+ * Responsible for core scheduling algorithm and publishing to listener signals
+ * 
+ */
 class SignalController : public Publisher{
 public:
     SignalController();

@@ -1,14 +1,30 @@
 #include "TrafficSignal.h"
 
+/**
+ * @brief Construct a new Traffic Signal:: Traffic Signal object
+ * 
+ * @param signalIdentifier 
+ */
 TrafficSignal::TrafficSignal(uint signalIdentifier)
 {
     identifier = signalIdentifier;
 }
 
+/**
+ * @brief Destroy the Traffic Signal:: Traffic Signal object
+ * 
+ */
 TrafficSignal::~TrafficSignal(){
 
 }
 
+/**
+ * @brief Function called during an update notification from publisher
+ * Responsible to turn the signal to appropriate light color
+ * 
+ * @param value 
+ * @param publishOnScreen 
+ */
 void TrafficSignal::update(uint value, bool publishOnScreen)
 {
     //do nothing for now
